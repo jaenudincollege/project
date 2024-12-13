@@ -1,0 +1,103 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Roboto", serif;
+}
+
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 9.6rem;
+}
+
+/* form */
+.form {
+  max-width: 50rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-top: 9rem;
+}
+
+.group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.label {
+  font-size: 2rem;
+}
+
+.input {
+  width: 70%;
+  padding: 5px;
+}
+
+.option {
+  justify-content: start;
+  gap: 10.5rem;
+}
+
+/* hidden logic */
+.hidden {
+  /* display: none; */
+}
+
+.btn {
+  padding: 1rem 4rem;
+  border-radius: 0.8rem;
+  border: none;
+  background-color: #099268;
+  color: #f8f9fa;
+}
+
+.btn:active {
+  background-color: #087f5b;
+}
+
+.submit {
+  background-color: #339af0;
+}
+
+.submit:active {
+  background-color: #228be6;
+}
+
+/* book info */
+.book {
+  display: flex;
+  gap: 4rem;
+}
+
+.box {
+  border: 1px solid #868e96;
+  width: 30rem;
+  padding: 1rem;
+}
+
+.info-group {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  align-items: center;
+}
+
+.label-info {
+  font-size: 1.8rem;
+}
+
+.value {
+  font-size: 1.8rem;
+}
+
+.info-group:nth-child(even) {
+  background-color: #e9ecef;
+}

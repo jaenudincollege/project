@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <button class="btn">Add book</button>
+
+      <form class="form hidden">
+        <div class="group">
+          <label class="label" for="title">Title</label>
+          <input class="input" type="text" name="title" id="title" />
+        </div>
+        <div class="group">
+          <label class="label" for="author" class="author">Author</label>
+          <input class="input" type="text" name="author" id="author" />
+        </div>
+        <div class="group">
+          <label class="label" for="pages" class="pages">Pages</label>
+          <input class="input" type="number" name="pages" id="pages" />
+        </div>
+        <div class="group option">
+          <label class="label" for="read">Read</label>
+          <select name="read" id="read">
+            <option value="true">Read</option>
+            <option value="false">Not read yet</option>
+          </select>
+        </div>
+        <button class="btn submit" type="submit">Submit</button>
+      </form>
+    </div>
+
+    <div class="container book">
+      <div class="box">
+        <p class="info-group">
+          <span class="label-info">Title</span>
+          <span class="value title">Atomic Habit</span>
+        </p>
+        <p class="info-group">
+          <span class="label-info">Author</span>
+          <span class="value author">James Clear</span>
+        </p>
+        <p class="info-group">
+          <span class="label-info">Pages</span>
+          <span class="value pages">300</span>
+        </p>
+        <p class="info-group">
+          <span class="label-info">Status</span>
+          <span class="value status">Read</span>
+        </p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
