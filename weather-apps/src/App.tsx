@@ -7,7 +7,11 @@ const App = () => {
   return (
     <div>
       <Search>
-        <input type="text" />
+        <input
+          type="text"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+        />
       </Search>
     </div>
   );
