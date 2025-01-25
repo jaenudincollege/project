@@ -1,4 +1,8 @@
-const Search = ({ children }) => {
+type SearchProps = {
+  children: React.ReactNode;
+};
+
+const Search = ({ children }: SearchProps) => {
   return <>{children}</>;
 };
 
