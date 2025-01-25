@@ -1,5 +1,5 @@
-const Search = () => {
-  return <input type="text" />;
+const Search = ({ children }) => {
+  return <>{children}</>;
 };
 
 export default Search;
