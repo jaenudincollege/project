@@ -4,11 +4,16 @@ import { searchMovie } from "./services/movieService";
 
 const App = () => {
   const [query, setQuery] = useState("");
+  const [movies, setMovies] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await searchMovie(query);
-      console.log(data);
+      try {
+        const data = await searchMovie(query);
+        setMovies(data);
+      } catch (error) {
+        console.error(error);
+      }
     };
     fetchData();
   }, [query]);
