@@ -1,5 +1,13 @@
+import Search from "./components/Search";
+
 const App = () => {
-  return <div>App</div>;
+  return (
+    <div>
+      <Search>
+        <input type="text" />
+      </Search>
+    </div>
+  );
 };
 
 export default App;
