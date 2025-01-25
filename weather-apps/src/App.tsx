@@ -4,18 +4,21 @@ import { getWeather } from "./services/fetchingApi";
 
 const App = () => {
   const [query, setQuery] = useState("");
+  const [weather, setWeather] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const res = await getWeather(query);
-        console.log(res);
+        setWeather(res);
       } catch (error) {
         console.error(error);
       }
     };
     fetchData();
   }, [query]);
+
+  console.log(weather);
 
   return (
     <div>
