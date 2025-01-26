@@ -23,16 +23,22 @@ const App = () => {
   const [weather, setWeather] = useState<WeatherData | null>(null);
 
   useEffect(() => {
+    const controller = new AbortController();
+
     const fetchData = async () => {
       try {
-        const res = await getWeather(query);
+        const res = await getWeather(query, controller.signal);
         setWeather(res);
       } catch (error) {
-        console.error(error);
+        if (error.name !== "AbortError") console.error(error);
       }
     };
-    const timer = setTimeout(fetchData, 1000);
-    return () => clearTimeout(timer);
+
+    fetchData();
+
+    return () => {
+      controller.abort();
+    };
   }, [query]);
 
   const {
