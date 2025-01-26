@@ -2,9 +2,25 @@ import { useEffect, useState } from "react";
 import Search from "./components/Search";
 import { getWeather } from "./services/fetchingApi";
 
+type WeatherData = {
+  current: {
+    condition: {
+      text: string;
+      icon: string;
+    };
+    temp_c: number;
+  };
+  location: {
+    country: string;
+    name: string;
+    region: string;
+    tz_id: string;
+  };
+};
+
 const App = () => {
   const [query, setQuery] = useState("");
-  const [weather, setWeather] = useState([]);
+  const [weather, setWeather] = useState<WeatherData | null>(null);
 
   useEffect(() => {
     const fetchData = async () => {
