@@ -31,7 +31,8 @@ const App = () => {
         console.error(error);
       }
     };
-    fetchData();
+    const timer = setTimeout(fetchData, 1000);
+    return () => clearTimeout(timer);
   }, [query]);
 
   const {
