@@ -19,8 +19,8 @@ const App = () => {
   }, [query]);
 
   const {
-    current: { condition: { text, icon } = {}, temp_c } = {},
-    location: { country, name, region, tz_id } = {},
+    current: { condition: { text = "", icon = "" } = {}, temp_c = "" } = {},
+    location: { country = "", name = "", region = "", tz_id = "" } = {},
   } = weather || {};
   console.log(text, icon, temp_c, country, name, region, tz_id);
 
