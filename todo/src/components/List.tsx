@@ -1,9 +1,13 @@
+import ListItem from "./ListItem";
+
 const List = ({ items }) => {
   return (
     <div>
       <ul>
         {items.map((item) => (
-          <li key={item.id}>{item.todo}</li>
+          <ListItem key={item.id} item={item}>
+            <button>Delete</button>
+          </ListItem>
         ))}
       </ul>
     </div>
