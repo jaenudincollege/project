@@ -4,9 +4,13 @@ import AddTodo from "./components/Input";
 const App = () => {
   const [todoItem, setTodoItem] = useState([]);
 
+  function handleAddTodoItem(todo) {
+    setTodoItem((todoItem) => [...todoItem, todo]);
+  }
+
   return (
     <div>
-      <AddTodo />
+      <AddTodo onAddTodo={handleAddTodoItem} />
     </div>
   );
 };
