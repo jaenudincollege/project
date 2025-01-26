@@ -1,6 +1,16 @@
 import ListItem from "./ListItem";
 
-const List = ({ items, onDeleteTodo }) => {
+interface Todo {
+  id: string;
+  todo: string;
+}
+
+type ListProps = {
+  items: Todo[];
+  onDeleteTodo: (id: string) => void;
+};
+
+const List = ({ items, onDeleteTodo }: ListProps) => {
   return (
     <div>
       <ul>
