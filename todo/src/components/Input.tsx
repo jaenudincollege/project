@@ -3,8 +3,12 @@ import { useState } from "react";
 const AddTodo = () => {
   const [todo, setTodo] = useState("");
 
+  function handleSubmit(e) {
+    e.preventDefault();
+  }
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <input
         type="text"
         value={todo}
