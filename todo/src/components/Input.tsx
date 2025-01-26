@@ -1,10 +1,18 @@
 import { useState } from "react";
 
-const AddTodo = () => {
+const AddTodo = ({ onAddTodo }) => {
   const [todo, setTodo] = useState("");
+
+  const id = crypto.randomUUID();
+  const todos = {
+    id,
+    todo,
+  };
 
   function handleSubmit(e) {
     e.preventDefault();
+    onAddTodo(todos);
+    setTodo("");
   }
 
   return (
