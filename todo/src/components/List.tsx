@@ -1,12 +1,12 @@
 import ListItem from "./ListItem";
 
-const List = ({ items }) => {
+const List = ({ items, onDeleteTodo }) => {
   return (
     <div>
       <ul>
         {items.map((item) => (
           <ListItem key={item.id} item={item}>
-            <button>Delete</button>
+            <button onClick={() => onDeleteTodo(item.id)}>Delete</button>
           </ListItem>
         ))}
       </ul>

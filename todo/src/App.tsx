@@ -9,10 +9,14 @@ const App = () => {
     setTodoItem((todoItem) => [...todoItem, todo]);
   }
 
+  function handleDeleteTodo(id) {
+    setTodoItem((todoItem) => todoItem.filter((todo) => todo.id !== id));
+  }
+
   return (
     <div>
       <AddTodo onAddTodo={handleAddTodoItem} />
-      <List items={todoItem} />
+      <List items={todoItem} onDeleteTodo={handleDeleteTodo} />
     </div>
   );
 };
