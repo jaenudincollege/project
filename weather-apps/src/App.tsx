@@ -35,7 +35,7 @@ const App = () => {
       }
     };
 
-    fetchData();
+    if (query) fetchData();
 
     return () => {
       controller.abort();
