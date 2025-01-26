@@ -1,7 +1,11 @@
-const List = () => {
+const List = ({ items }) => {
   return (
     <div>
-      <ul></ul>
+      <ul>
+        {items.map((item) => (
+          <li key={item.id}>{item.todo}</li>
+        ))}
+      </ul>
     </div>
   );
 };
