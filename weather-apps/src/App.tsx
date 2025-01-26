@@ -29,7 +29,7 @@ const App = () => {
       try {
         const res = await getWeather(query, controller.signal);
         setWeather(res);
-      } catch (error) {
+      } catch (error: any) {
         if (error.name !== "AbortError") console.error(error);
       }
     };
