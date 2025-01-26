@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Search from "./components/Search";
 import { getWeather } from "./services/fetchingApi";
+import Card from "./components/Card";
 
 type WeatherData = {
   current: {
@@ -56,6 +57,12 @@ const App = () => {
           onChange={(e) => setQuery(e.target.value)}
         />
       </Search>
+      <Card>
+        <h1>{region ? name + " - " + region + ` (${country})` : ""}</h1>
+        <span>{temp_c ? temp_c + "℃" : null}</span>
+        <img src={`https:${icon}`} alt={text} />
+        <p>{text}</p>
+      </Card>
     </div>
   );
 };
