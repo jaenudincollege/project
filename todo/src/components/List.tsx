@@ -12,11 +12,16 @@ type ListProps = {
 
 const List = ({ items, onDeleteTodo }: ListProps) => {
   return (
-    <div>
+    <div className="w-full">
       <ul>
         {items.map((item) => (
           <ListItem key={item.id} item={item}>
-            <button onClick={() => onDeleteTodo(item.id)}>Delete</button>
+            <button
+              onClick={() => onDeleteTodo(item.id)}
+              className="outline-1 py-2 px-4 bg-red-500 text-white rounded-lg font-medium"
+            >
+              Delete
+            </button>
           </ListItem>
         ))}
       </ul>

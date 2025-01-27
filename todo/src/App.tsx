@@ -26,7 +26,7 @@ const App = () => {
   }
 
   return (
-    <div>
+    <div className="container mx-auto grid place-items-center justify-center p-10">
       <AddTodo onAddTodo={handleAddTodoItem} />
       <List items={todoItem} onDeleteTodo={handleDeleteTodo} />
     </div>
