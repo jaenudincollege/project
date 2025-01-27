@@ -14,6 +14,8 @@ const AddTodo = ({ onAddTodo }: AddTodoProps) => {
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    if (!todo) return;
+
     const id = crypto.randomUUID();
     onAddTodo({ id, todo });
     setTodo("");
