@@ -26,6 +26,7 @@ const AddTodo = ({ onAddTodo }: AddTodoProps) => {
         value={todo}
         onChange={(e) => setTodo(e.target.value)}
       />
+      <button type="submit">Add Todo</button>
     </form>
   );
 };
