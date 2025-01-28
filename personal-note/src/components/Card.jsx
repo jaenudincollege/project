@@ -10,7 +10,12 @@ function Card({ notes, onDeleteNote }) {
           <div className="card-heading">
             <h1 className="note-title">{note.title}</h1>
             <span className="note-date">
-              {note.createdAt.toLocaleDateString()}
+              {new Date(note.createdAt).toLocaleDateString("id-ID", {
+                weekday: "long",
+                day: "numeric",
+                month: "long",
+                year: "numeric",
+              })}
             </span>
             <p className="note-body">{note.body}</p>
           </div>

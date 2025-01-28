@@ -1,11 +1,23 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import CreateNote from "./components/CreateNote";
 import Header from "./components/Header";
 import Card from "./components/Card";
 import "./styles/app.css";
 
 function App() {
-  const [notes, setNotes] = useState([]);
+  const [notes, setNotes] = useState(function () {
+    const savedNote = localStorage.getItem("notes");
+    return savedNote ? JSON.parse(savedNote) : [];
+  });
+
+  console.log(notes)
+  
+  useEffect(
+    function () {
+      localStorage.setItem("notes", JSON.stringify(notes));
+    },
+    [notes]
+  );
 
   function handleAddNote(newNotes) {
     setNotes((notes) => [...notes, newNotes]);
