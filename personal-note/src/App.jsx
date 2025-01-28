@@ -18,7 +18,7 @@ function App() {
   return (
     <div className="container">
       <Header />
-      <CreateNote onAddNote={handleAddNote} />
+      <CreateNote onAddNote={handleAddNote} maxChar={50} />
       <Card notes={notes} onDeleteNote={handleDeleteNote} />
     </div>
   );
