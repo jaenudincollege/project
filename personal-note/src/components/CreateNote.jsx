@@ -1,11 +1,12 @@
 import Button from "./Button";
+import Input from "./Input";
 
 function CreateNote() {
   return (
-    <div>
+    <div >
       <h2>Create New Note</h2>
       <form>
-        <input type="text" />
+        <Input />
         <textarea />
         <Button btnText={"Create Note"} />
       </form>
