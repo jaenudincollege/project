@@ -19,7 +19,13 @@ function App() {
     <div className="container">
       <Header />
       <CreateNote onAddNote={handleAddNote} maxChar={50} />
-      <Card notes={notes} onDeleteNote={handleDeleteNote} />
+      {notes.length > 0 ? (
+        <Card notes={notes} onDeleteNote={handleDeleteNote} />
+      ) : (
+        <span className="not-available">
+          It seems there’s no note available. Please create one first.
+        </span>
+      )}
     </div>
   );
 }
