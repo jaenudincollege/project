@@ -1,7 +1,7 @@
 import "../styles/card.css";
 import Button from "./Button";
 
-function Card({ notes }) {
+function Card({ notes, onDeleteNote }) {
   return (
     <div className="card-container">
       <p className="heading">Active Notes</p>
@@ -15,7 +15,12 @@ function Card({ notes }) {
             <p className="note-body">{note.body}</p>
           </div>
           <div className="btn-group">
-            <Button className={"btn btn-delete"}>Delete</Button>
+            <Button
+              className={"btn btn-delete"}
+              onClick={() => onDeleteNote(note.id)}
+            >
+              Delete
+            </Button>
             <Button className={"btn btn-archive"}>Archive</Button>
           </div>
         </div>
