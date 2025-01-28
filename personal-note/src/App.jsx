@@ -15,8 +15,6 @@ function App() {
     setNotes((notes) => notes.filter((note) => note.id !== id));
   }
 
-  console.log(notes);
-
   return (
     <div className="container">
       <Header />

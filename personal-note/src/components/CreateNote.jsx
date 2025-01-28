@@ -15,8 +15,6 @@ function CreateNote({ onAddNote }) {
     archived: false,
   };
 
-  console.log(newNotes);
-
   function handleSubmit(e) {
     e.preventDefault();
 
