@@ -1,14 +1,43 @@
 import Button from "./Button";
 import Input from "./Input";
 import "../styles/createnote.css";
+import { useState } from "react";
 
 function CreateNote() {
+  const [title, setTitle] = useState("");
+  const [note, setNote] = useState("");
+
+  const newNotes = {
+    id: crypto.randomUUID(),
+    title,
+    note,
+    createdAt: new Date(),
+    archived: false,
+  };
+
+  console.log(newNotes)
+  
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    if (!title || !note) return;
+  }
+
   return (
     <div className="form-container">
       <h2 className="form-heading">Create New Note</h2>
-      <form className="form">
-        <Input className={"title-input"} placeholder={"enter the title"} />
-        <textarea className="notes" />
+      <form className="form" onSubmit={handleSubmit}>
+        <Input
+          className={"title-input"}
+          placeholder={"enter the title"}
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+        />
+        <textarea
+          className="notes"
+          value={note}
+          onChange={(e) => setNote(e.target.value)}
+        />
         <Button className={"btn-create"}>Create Note</Button>
       </form>
     </div>
