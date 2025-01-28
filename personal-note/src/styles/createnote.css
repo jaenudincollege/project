@@ -4,7 +4,7 @@
 }
 
 .form-heading {
-  font-weight: 500;
+  font-weight: 400;
   font-size: 1.728rem;
   margin-bottom: 2.75rem;
 }
@@ -16,7 +16,7 @@
 }
 
 .title-input {
-  padding: 0.375rem 0.75rem;
+  padding: 0.375rem 1.5rem;
   width: 100%;
   font-size: 1.2rem;
   font-weight: 400;
@@ -27,4 +27,21 @@
 .notes {
   width: 100%;
   height: 13.75rem;
+  padding: 1rem 1.5rem;
+  outline: none;
+}
+
+.btn-create {
+  padding: 0.5rem;
+  background: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  border: 1px solid #495057;
+}
+
+.title-input,
+.notes,
+.btn-create {
+  border-radius: 0.5rem;
 }

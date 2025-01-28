@@ -9,7 +9,7 @@ function CreateNote() {
       <form className="form">
         <Input className={"title-input"} placeholder={"enter the title"} />
         <textarea className="notes" />
-        <Button btnText={"Create Note"} />
+        <Button className={"btn-create"}>Create Note</Button>
       </form>
     </div>
   );
