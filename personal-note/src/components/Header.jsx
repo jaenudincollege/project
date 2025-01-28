@@ -1,9 +1,13 @@
+import "../styles/header.css";
+
 function Header() {
   return (
-    <div className="header">
-      <h2>Logo</h2>
-      <input type="text" />
-    </div>
+    <header className="header">
+      <div className="header-container">
+        <h2 className="header-logo">Logo</h2>
+        <input type="text" />
+      </div>
+    </header>
   );
 }
 
