@@ -9,8 +9,13 @@ function Header() {
   return (
     <header className="header">
       <div className="header-container">
-        <h2 className="header-logo">Logo</h2>
-        <Input value={query} onChange={(e) => setQuery(e.target.value)} />
+        <h2 className="header-logo">Notes</h2>
+        <Input
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder={"search notes ..."}
+          className="input-search"
+        />
       </div>
     </header>
   );
