@@ -3,7 +3,7 @@ import Input from "./Input";
 import "../styles/createnote.css";
 import { useState } from "react";
 
-function CreateNote() {
+function CreateNote({ onAddNote }) {
   const [title, setTitle] = useState("");
   const [note, setNote] = useState("");
 
@@ -15,12 +15,17 @@ function CreateNote() {
     archived: false,
   };
 
-  console.log(newNotes)
-  
+  console.log(newNotes);
+
   function handleSubmit(e) {
     e.preventDefault();
 
     if (!title || !note) return;
+
+    onAddNote(newNotes);
+
+    setTitle("");
+    setNote("");
   }
 
   return (
