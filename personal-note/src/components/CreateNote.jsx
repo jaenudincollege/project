@@ -1,13 +1,14 @@
 import Button from "./Button";
 import Input from "./Input";
+import "../styles/createnote.css";
 
 function CreateNote() {
   return (
-    <div >
-      <h2>Create New Note</h2>
-      <form>
-        <Input />
-        <textarea />
+    <div className="form-container">
+      <h2 className="form-heading">Create New Note</h2>
+      <form className="form">
+        <Input className={"title-input"} placeholder={"enter the title"} />
+        <textarea className="notes" />
         <Button btnText={"Create Note"} />
       </form>
     </div>
