@@ -1,6 +1,8 @@
 import { useState } from "react";
 import CreateNote from "./components/CreateNote";
 import Header from "./components/Header";
+import Card from "./components/Card";
+import './styles/app.css'
 
 function App() {
   const [notes, setNotes] = useState([]);
@@ -9,12 +11,13 @@ function App() {
     setNotes((notes) => [...notes, newNotes]);
   }
 
-  console.log(notes)
-  
+  console.log(notes);
+
   return (
-    <div>
+    <div className="container">
       <Header />
       <CreateNote onAddNote={handleAddNote} />
+      <Card notes={notes} />
     </div>
   );
 }
