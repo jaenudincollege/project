@@ -1,3 +1,10 @@
 .container {
     padding-bottom: 4rem;
 }
+
+.not-available {
+    font-size: 1.728rem;
+    display: block;
+    text-align: center;
+    color: #868e96;
+}
