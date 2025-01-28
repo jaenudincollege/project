@@ -4,7 +4,6 @@ import Input from "./Input";
 
 function Header() {
   const [query, setQuery] = useState("");
-  console.log(query);
 
   return (
     <header className="header">
