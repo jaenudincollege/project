@@ -1,5 +1,7 @@
 /* https://piccalil.li/blog/a-modern-css-reset */
 
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
 /* Box sizing rules */
 *,
 *::before,
@@ -25,6 +27,11 @@ dd {
 ul[role="list"],
 ol[role="list"] {
   list-style: none;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Roboto", serif;
 }
 
 /* Set core root defaults */
