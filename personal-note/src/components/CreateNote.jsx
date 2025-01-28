@@ -10,7 +10,7 @@ function CreateNote({ onAddNote }) {
   const newNotes = {
     id: crypto.randomUUID(),
     title,
-    note,
+    body: note,
     createdAt: new Date(),
     archived: false,
   };
