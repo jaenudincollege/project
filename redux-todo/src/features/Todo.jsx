@@ -1,17 +1,40 @@
 import { useState } from "react";
-import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
-import { addTodo, deleteTodo, toggleCompleted } from "./todoSlice";
+import { addTodo } from "./todoSlice";
+import styled from "styled-components";
+import Button from "../components/Button";
+import Display from "./Display";
+
+const TodoStyle = styled.div`
+  border: 1px solid;
+  padding: 44px;
+`;
+
+const Input = styled.input`
+  width: 100%;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border: none;
+  outline: 1px solid;
+  padding: 12px 24px;
+  font-size: 22px;
+`;
+
+const InputGroup = styled.form`
+  display: flex;
+  margin-bottom: 24px;
+`;
 
 const Todo = () => {
   const [text, setText] = useState("");
-  const { todos } = useSelector((state) => state.todos);
   const dispatch = useDispatch();
-
-  console.log(todos);
 
   const handleChange = (e) => {
     setText(e.target.value);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
   };
 
   const handleClick = () => {
@@ -21,35 +44,16 @@ const Todo = () => {
     }
   };
 
-  const handleDelete = (id) => {
-    dispatch(deleteTodo(id));
-  };
-
-  const handleCompleted = (id) => {
-    dispatch(toggleCompleted(id));
-  };
-
   return (
-    <div>
-      <input type="text" value={text} onChange={handleChange} />
-      <button onClick={handleClick}>Add Todo</button>
-
-      <div>
-        {todos.map((todo) => (
-          <div key={todo.id}>
-            <h1
-              style={{
-                textDecoration: todo.completed ? "line-through" : "none",
-              }}
-            >
-              {todo.title}
-            </h1>
-            <button onClick={() => handleDelete(todo.id)}>delete</button>
-            <button onClick={() => handleCompleted(todo.id)}>completed</button>
-          </div>
-        ))}
-      </div>
-    </div>
+    <TodoStyle>
+      <InputGroup onSubmit={handleSubmit}>
+        <Input type="text" value={text} onChange={handleChange} />
+        <Button variant="newItem" onClick={handleClick}>
+          Add Todo
+        </Button>
+      </InputGroup>
+      <Display />
+    </TodoStyle>
   );
 };
 
